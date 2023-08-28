@@ -1,6 +1,37 @@
 import random
 
-# List of choices
+# ASCII art for each choice
+rock_img = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper_img = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors_img = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+# List of ASCII art images for each choice
+game_imgs = [rock_img, paper_img, scissors_img]
+
+# List of available choices
 choices = ["rock", "paper", "scissors"]
 
 # Get user's choice
@@ -14,6 +45,14 @@ computer_choice = random.choice(choices)
 # Display choices
 print(f"You chose {user_choice}.")
 print(f"Computer chose {computer_choice}.")
+
+# Display ASCII art for user's choice
+print("\nYour choice:")
+print(game_imgs[choices.index(user_choice)])
+
+# Display ASCII art for computer's choice
+print("\nComputer's choice:")
+print(game_imgs[choices.index(computer_choice)])
 
 # Determine the winner
 if user_choice == computer_choice:
